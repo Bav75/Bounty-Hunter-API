@@ -9,7 +9,14 @@ class UsersController < ApplicationController
             user = User.new(user_params)
 
             if user.save
-                render json: 
+                render json: UserSerializer.new(user)
+            else
+                errors = []
+                user.errors.messages.each do |error_symbol, message|
+                    errors.push("There appears to be an error: #{error_symbol} #{message[0]}")
+                end
+                render json: {errors: errors, status: 400}
+            end
         end
     end
 
