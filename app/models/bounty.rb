@@ -3,7 +3,7 @@ class Bounty < ApplicationRecord
 
 
     # finds existing bounties for a given user and bounty
-    def self.find_duplicates(title, user)
+    def self.find_duplicates(user, title)
         self.where(user: user, title: title)
     end
 

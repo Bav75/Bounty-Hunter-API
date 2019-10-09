@@ -1,7 +1,7 @@
 class BountiesController < ApplicationController
 
     def create
-        binding.pry
+        # binding.pry
         userId = params[:search][:userId]
 
         link = params[:search][:link]
@@ -22,8 +22,10 @@ class BountiesController < ApplicationController
             )
             bounty.save
 
+            render json: BountySerializer.new(bounty)
         else
             render json: {errors: "Error: You've already marked this bounty!", status: 400}
         end
+    end
 
 end
