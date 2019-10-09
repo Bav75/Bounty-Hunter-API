@@ -1,7 +1,13 @@
 class BountiesController < ApplicationController
 
-    def index
-        binding.pry
+    def fetch
+        # binding.pry
+
+        userId = params[:userId]
+
+        user = User.find_by(id: userId)
+
+        render json: {content: user.bounties}
     end
 
     def create
