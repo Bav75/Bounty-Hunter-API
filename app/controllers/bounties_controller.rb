@@ -23,8 +23,7 @@ class BountiesController < ApplicationController
             bounty.save
 
         else
-            render :json 
-
+            render json: {errors: "Error: You've already marked this bounty!", status: 400}
         end
 
 end
