@@ -1,5 +1,9 @@
 class BountiesController < ApplicationController
 
+    def index
+        binding.pry
+    end
+
     def create
         # binding.pry
         userId = params[:search][:userId]
