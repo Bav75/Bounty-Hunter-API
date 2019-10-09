@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2019_10_07_165529) do
   create_table "bounties", force: :cascade do |t|
     t.string "tags", array: true
     t.integer "bounty_amount"
+    t.string "title"
     t.string "link"
     t.datetime "bounty_closes_date"
     t.bigint "user_id"
