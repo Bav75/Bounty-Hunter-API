@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   # bounties routes 
-  resources :bounties, only: [:create]
+  resources :bounties, only: [:create, :destroy]
   post '/fetch', to: 'bounties#fetch'
 
   # users routes

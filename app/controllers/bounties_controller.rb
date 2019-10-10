@@ -44,4 +44,16 @@ class BountiesController < ApplicationController
         end
     end
 
+    def destroy
+
+        bountyId = params[:bountyId]
+
+        bounty = Bounty.find_by(id: bountyId)
+        bounty.delete
+
+        render json: {message: "Bounty removed.", status: 200}
+
+
+    end
+
 end
