@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2019_10_07_165529) do
     t.integer "bounty_amount"
     t.string "title"
     t.string "link"
-    t.datetime "bounty_closes_date"
+    t.decimal "bounty_closes_date"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -1,3 +1,5 @@
+require 'date'
+
 class BountiesController < ApplicationController
 
     def fetch
@@ -19,6 +21,10 @@ class BountiesController < ApplicationController
         tags = params[:search][:tags]
         bounty_amount = params[:search][:bounty_amount]
         bounty_closes_date = params[:search][:bounty_closes_date]
+
+        # configure epoch integer to be datetime 
+
+        # bounty_closes_date = Time.at(bounty_closes_date)
 
         user = User.find_by(id: userId)
 
